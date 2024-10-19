@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Aggiungi Nota</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Titolo</mat-label>
+    <input matInput [(ngModel)]="titolo" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Contenuto</mat-label>
+    <textarea matInput [(ngModel)]="contenuto"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="chiudiDialog()">Annulla</button>
+  <button mat-button (click)="aggiungiNota()" cdkFocusInitial>Salva</button>
+</mat-dialog-actions>

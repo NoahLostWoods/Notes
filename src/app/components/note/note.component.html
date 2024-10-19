@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <span>Note App</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="Aggiungi nota" (click)="apriDialog()">
+      <mat-icon>note_add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+  
+  <!-- Colonna Titolo -->
+  <ng-container matColumnDef="titolo">
+    <th mat-header-cell *matHeaderCellDef> Titolo </th>
+    <td mat-cell *matCellDef="let nota"> {{ nota.titolo }} </td>
+  </ng-container>
+
+  <!-- Colonna Contenuto -->
+  <ng-container matColumnDef="contenuto">
+    <th mat-header-cell *matHeaderCellDef> Contenuto </th>
+    <td mat-cell *matCellDef="let nota"> {{ nota.contenuto }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['titolo', 'contenuto']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['titolo', 'contenuto'];"></tr>
+</table>
+  
